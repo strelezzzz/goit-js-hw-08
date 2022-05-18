@@ -14,10 +14,12 @@ player.getVideoTitle().then(function (title) {
   console.log('title:', title);
 });
 // You can listen for events in the player by attaching a callback using .on():
-player.on('timeupdate', function (data) {
-  console.log(data.seconds);
-  localStorage.setItem(STORAGE_KEY, data.seconds);
-});
+player.on('timeupdate', throttle(setTimeToLocalStorage, 1000) );
+  
+function setTimeToLocalStorage (data) {
+    console.log(data.seconds);
+    localStorage.setItem(STORAGE_KEY, data.seconds);
+}
 // data is an object containing properties specific to that event
 // {
 //   duration: 61.857;
