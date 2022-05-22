@@ -16,9 +16,9 @@ function onFormSubmit(evt) {
     return alert('Будь ласка заповніть всі поля!');
   }
   evt.preventDefault();
+  console.log({ email: email.value, message: message.value });
   evt.target.reset();
-  const STORAGE_KEY = 'feedback-form-state';
-  //   console.log({ email: email.value, message: message.value });
+  //   const STORAGE_KEY = 'feedback-form-state';
   localStorage.removeItem(STORAGE_KEY);
 }
 //Відстежуй на формі подію input, і щоразу записуй у локальне сховище об'єкт з полями email і message.
