@@ -36,6 +36,6 @@ function checkOnInput() {
   //якщо об'єкт присутній, то:
   if (savedMessage) {
     email.value = savedMessage.email || ''; // присвоюємо відповідні значення;
-    message.value = savedMessage.message || '';
+    message.value = savedMessage.message || ''; // присвоюємо відповідні значення;
   }
 }
