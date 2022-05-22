@@ -4,4 +4,4 @@ var t=arguments[3],n="Expected a function",e=NaN,i="[object Symbol]",r=/^\s+|\s+
 },{}],"TTyb":[function(require,module,exports) {
 "use strict";var e=t(require("lodash.throttle"));function t(e){return e&&e.__esModule?e:{default:e}}const a="feedback-form-state",r=document.querySelector(".feedback-form"),o=document.querySelector("textarea"),u=document.querySelector("input");function n(e){if(""===u.value||""===o.value)return alert("Будь ласка заповніть всі поля!");e.preventDefault(),e.target.reset();localStorage.removeItem("feedback-form-state")}function l(e){const t=JSON.parse(localStorage.getItem(a))||{},{name:r,value:o}=e.target;t[r]=o,localStorage.setItem(a,JSON.stringify(t))}function c(){const e=a,t=JSON.parse(localStorage.getItem(e));t&&(u.value=t.email||"",o.value=t.message||"")}r.addEventListener("submit",n),r.addEventListener("input",(0,e.default)(l,500)),c();
 },{"lodash.throttle":"FNyO"}]},{},["TTyb"], null)
-//# sourceMappingURL=/goit-js-hw-08/03-feedback.56fc8bd2.js.map
+//# sourceMappingURL=/goit-js-hw-08/03-feedback.7f3d5e62.js.map
