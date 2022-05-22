@@ -35,7 +35,7 @@ function checkOnInput() {
   const savedMessage = JSON.parse(localStorage.getItem(formData)); //розпарсимо копію (посилання) об'єкта з локал сторейдж
   //якщо об'єкт присутній, то:
   if (savedMessage) {
-    email.value = savedMessage.email || '';
+    email.value = savedMessage.email || ''; // присвоюємо відповідні значення;
     message.value = savedMessage.message || '';
   }
 }
