@@ -12,6 +12,9 @@ form.addEventListener('input', throttle(onFormInput, 500));
 checkOnInput();
 //Очищаємо форму та локальне сховище, при Submit
 function onFormSubmit(evt) {
+  if (email.value === '' || message.value === '') {
+    return alert('Будь ласка заповніть всі поля!');
+  }
   evt.preventDefault();
   evt.target.reset();
   const STORAGE_KEY = 'feedback-form-state';
