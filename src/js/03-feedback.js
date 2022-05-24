@@ -2,8 +2,8 @@ import throttle from 'lodash.throttle';
 const STORAGE_KEY = 'feedback-form-state';
 //оголошення змінних
 const form = document.querySelector('.feedback-form');
-const message = document.querySelector('textarea');
-const email = document.querySelector('input');
+const message = form.elements.message;
+const email = form.elements.email;
 // вішаю   на форму сабміт ,щоб ресетнути форму і очистити localStorage:
 form.addEventListener('submit', onFormSubmit);
 //вішаю на форму слухач на  інпут - зчитувати рядки введені користувачем:
@@ -17,8 +17,8 @@ function onFormSubmit(evt) {
   }
   evt.preventDefault();
   console.log({ email: email.value, message: message.value });
-  evt.target.reset();
-  //   const STORAGE_KEY = 'feedback-form-state';
+  evt.currentTarget.reset();
+  const STORAGE_KEY = 'feedback-form-state';
   localStorage.removeItem(STORAGE_KEY);
 }
 //Відстежуй на формі подію input, і щоразу записуй у локальне сховище об'єкт з полями email і message.
